@@ -8,6 +8,8 @@ let upperCase = false;
 let number = false;
 let specialCharacter = false;
 
+let passwordArray = [];
+
 const loweCaseArray = [
   "a",
   "b",
@@ -110,7 +112,14 @@ const whatCharacters = function () {
 };
 
 //function to push at least one random character of each selected character type into the final password array
-const includeSelectedCharacterTypes = function () {};
+const includeSelectedCharacterTypes = function () {
+  if (lowerCase) {
+    const arrayLength = loweCaseArray.length;
+    const randomIndex = Math.floor(Math.random * arrayLength);
+    passwordArray.push(loweCaseArray[randomIndex]);
+    passwordLength -= 1;
+  }
+};
 
 //function to concatenate arrays for selected characters and set loop length depending on how many characters were pushed already
 
