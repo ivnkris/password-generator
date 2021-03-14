@@ -192,8 +192,6 @@ function generatePassword() {
 
       //join password array into a string
       password = passwordArray.join("");
-
-      //TODO: need to reset variables to make it reusable
     }
   }
 
@@ -206,6 +204,15 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+
+  //variables re-set to make the generator re-usable
+  passwordLength = 0;
+  lowerCase = false;
+  upperCase = false;
+  number = false;
+  specialCharacter = false;
+  concatenatedArray = [];
+  passwordArray = [];
 }
 
 // Add event listener to generate button
