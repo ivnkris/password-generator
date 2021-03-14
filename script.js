@@ -26,8 +26,6 @@ const whatCharacters = function () {
   specialCharacter = confirm("Would you like to include a special character?");
 };
 
-//validation if at least one character type was selected
-
 //function to push at least one random character of each selected character type into the final password array
 
 //function to concatenate arrays for selected characters and set loop length depending on how many characters were pushed already
@@ -45,6 +43,13 @@ function generatePassword() {
     alert("Password length must be between 8 and 128 characters");
   } else {
     whatCharacters();
+
+    //validation if at least one character type was selected
+    if (!lowerCase && !upperCase && !number && !specialCharacter) {
+      alert("You must include at least one character type");
+    } else {
+      //continue password generating logic here
+    }
   }
 
   return password;
