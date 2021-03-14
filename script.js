@@ -172,8 +172,6 @@ const fillPasswordArray = function () {
   }
 };
 
-//function to join password array into a string
-
 function generatePassword() {
   var password = "";
   lengthPrompt();
@@ -191,7 +189,11 @@ function generatePassword() {
       includeSelectedCharacterTypes();
       concatenateArrays();
       fillPasswordArray();
-      //continue password generating logic here
+
+      //join password array into a string
+      password = passwordArray.join("");
+
+      //need to reset variables to make it reusable
     }
   }
 
