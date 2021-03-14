@@ -8,9 +8,12 @@ const lengthPrompt = function () {
   passwordLength = prompt(
     "Please enter your password length (must be between 8 and 128 characters)"
   );
-};
 
-//validation if the password length is between 8 and 128 characters
+  //validation if the password length is between 8 and 128 characters
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert("Password length must be between 8 and 128 characters");
+  }
+};
 
 //confirmation to include lowercase, uppercase, numeric and special characters stored in a boolean variable
 
