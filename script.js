@@ -1,7 +1,14 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+let passwordLength;
+
 //prompt for the length of the password stored in a variable
+const lengthPrompt = function () {
+  passwordLength = prompt(
+    "Please enter your password length (must be between 8 and 128 characters)"
+  );
+};
 
 //validation if the password length is between 8 and 128 characters
 
@@ -19,6 +26,7 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
   var password = "";
+  lengthPrompt();
 
   return password;
 }
