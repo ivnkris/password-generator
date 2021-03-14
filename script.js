@@ -115,28 +115,28 @@ const whatCharacters = function () {
 const includeSelectedCharacterTypes = function () {
   if (lowerCase) {
     const arrayLength = lowerCaseArray.length;
-    const randomIndex = Math.floor(Math.random * arrayLength);
+    const randomIndex = Math.floor(Math.random() * arrayLength);
     passwordArray.push(lowerCaseArray[randomIndex]);
     passwordLength -= 1;
   }
 
   if (upperCase) {
     const arrayLength = upperCaseArray.length;
-    const randomIndex = Math.floor(Math.random * arrayLength);
+    const randomIndex = Math.floor(Math.random() * arrayLength);
     passwordArray.push(upperCaseArray[randomIndex]);
     passwordLength -= 1;
   }
 
   if (number) {
     const arrayLength = numberArray.length;
-    const randomIndex = Math.floor(Math.random * arrayLength);
+    const randomIndex = Math.floor(Math.random() * arrayLength);
     passwordArray.push(numberArray[randomIndex]);
     passwordLength -= 1;
   }
 
   if (specialCharacter) {
     const arrayLength = specialCharacterArray.length;
-    const randomIndex = Math.floor(Math.random * arrayLength);
+    const randomIndex = Math.floor(Math.random() * arrayLength);
     passwordArray.push(specialCharacterArray[randomIndex]);
     passwordLength -= 1;
   }
@@ -164,7 +164,6 @@ function generatePassword() {
     } else {
       includeSelectedCharacterTypes();
       //continue password generating logic here
-      console.log(passwordArray);
     }
   }
 
