@@ -8,6 +8,8 @@ let upperCase = false;
 let number = false;
 let specialCharacter = false;
 
+let concatenatedArray = [];
+
 let passwordArray = [];
 
 const lowerCaseArray = [
@@ -111,7 +113,7 @@ const whatCharacters = function () {
   specialCharacter = confirm("Would you like to include a special character?");
 };
 
-//function to push at least one random character of each selected character type into the final password array
+//function to push at least one random character of each selected character type into the final password array and set loop length depending on how many characters were pushed
 const includeSelectedCharacterTypes = function () {
   if (lowerCase) {
     const arrayLength = lowerCaseArray.length;
@@ -142,7 +144,24 @@ const includeSelectedCharacterTypes = function () {
   }
 };
 
-//function to concatenate arrays for selected characters and set loop length depending on how many characters were pushed already
+//function to concatenate arrays for selected characters
+const concatenateArrays = function () {
+  if (lowerCase) {
+    concatenatedArray = concatenatedArray.concat(lowerCaseArray);
+  }
+
+  if (upperCase) {
+    concatenatedArray = concatenatedArray.concat(upperCaseArray);
+  }
+
+  if (number) {
+    concatenatedArray = concatenatedArray.concat(numberArray);
+  }
+
+  if (specialCharacter) {
+    concatenatedArray = concatenatedArray.concat(specialCharacterArray);
+  }
+};
 
 //function to loop through concatenated character array and push random characters into password array
 
@@ -163,6 +182,7 @@ function generatePassword() {
       alert("You must include at least one character type");
     } else {
       includeSelectedCharacterTypes();
+      concatenateArrays();
       //continue password generating logic here
     }
   }
