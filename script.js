@@ -193,7 +193,7 @@ function generatePassword() {
       //join password array into a string
       password = passwordArray.join("");
 
-      //need to reset variables to make it reusable
+      //TODO: need to reset variables to make it reusable
     }
   }
 
