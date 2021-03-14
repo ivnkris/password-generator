@@ -3,19 +3,28 @@ var generateBtn = document.querySelector("#generate");
 
 let passwordLength;
 
+let lowerCase = false;
+let upperCase = false;
+let number = false;
+let specialCharacter = false;
+
 //prompt for the length of the password stored in a variable
 const lengthPrompt = function () {
   passwordLength = prompt(
     "Please enter your password length (must be between 8 and 128 characters)"
   );
-
-  //validation if the password length is between 8 and 128 characters
-  if (passwordLength < 8 || passwordLength > 128) {
-    alert("Password length must be between 8 and 128 characters");
-  }
 };
 
 //confirmation to include lowercase, uppercase, numeric and special characters stored in a boolean variable
+const whatCharacters = function () {
+  lowerCase = confirm("Would you like to include a lowercase character?");
+
+  upperCase = confirm("Would you like to include an uppercase character?");
+
+  number = confirm("Would you like to include a number?");
+
+  specialCharacter = confirm("Would you like to include a special character?");
+};
 
 //validation if at least one character type was selected
 
@@ -30,6 +39,13 @@ const lengthPrompt = function () {
 function generatePassword() {
   var password = "";
   lengthPrompt();
+
+  //validation if the password length is between 8 and 128 characters
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert("Password length must be between 8 and 128 characters");
+  } else {
+    whatCharacters();
+  }
 
   return password;
 }
