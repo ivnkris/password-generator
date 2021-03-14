@@ -1,12 +1,95 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-let passwordLength;
+let passwordLength = 0;
 
 let lowerCase = false;
 let upperCase = false;
 let number = false;
 let specialCharacter = false;
+
+const loweCaseArray = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+const upperCaseArray = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
+const numberArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+const specialCharacterArray = [
+  "@",
+  "%",
+  "+",
+  "\\",
+  "/",
+  "'",
+  "!",
+  "#",
+  "$",
+  "^",
+  "?",
+  ":",
+  ",",
+  ")",
+  "(",
+  "}",
+  "{",
+  "]",
+  "[",
+  "~",
+  "-",
+  "_",
+  ".",
+];
 
 //prompt for the length of the password stored in a variable
 const lengthPrompt = function () {
@@ -27,6 +110,7 @@ const whatCharacters = function () {
 };
 
 //function to push at least one random character of each selected character type into the final password array
+const includeSelectedCharacterTypes = function () {};
 
 //function to concatenate arrays for selected characters and set loop length depending on how many characters were pushed already
 
