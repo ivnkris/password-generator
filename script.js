@@ -163,7 +163,14 @@ const concatenateArrays = function () {
   }
 };
 
-//function to loop through concatenated character array and push random characters into password array
+//function to loop through password length and push random characters from concatenated array into password array
+const fillPasswordArray = function () {
+  for (let i = 0; i < passwordLength; i++) {
+    const arrayLength = concatenatedArray.length;
+    const randomIndex = Math.floor(Math.random() * arrayLength);
+    passwordArray.push(concatenatedArray[randomIndex]);
+  }
+};
 
 //function to join password array into a string
 
@@ -183,6 +190,7 @@ function generatePassword() {
     } else {
       includeSelectedCharacterTypes();
       concatenateArrays();
+      fillPasswordArray();
       //continue password generating logic here
     }
   }
