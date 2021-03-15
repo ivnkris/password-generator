@@ -95,15 +95,22 @@ const specialCharacterArray = [
   ".",
 ];
 
-//prompt for the length of the password stored in a variable
-const lengthPrompt = function () {
+/**
+ * @description prompt for the length of the password stored in a variable
+ * @returns variable length of the password
+ */
+const lengthPrompt = () => {
   passwordLength = prompt(
     "Please enter your password length (must be between 8 and 128 characters)"
   );
+  passwordLength = parseInt(passwordLength);
 };
 
-//confirmation to include lowercase, uppercase, numeric and special characters stored in a boolean variable
-const whatCharacters = function () {
+/**
+ * @description confirmation to include lowercase, uppercase, numeric and special characters stored in a boolean variable
+ * @returns boolean variables of each character type
+ */
+const whatCharacters = () => {
   lowerCase = confirm("Would you like to include a lowercase character?");
 
   upperCase = confirm("Would you like to include an uppercase character?");
@@ -113,8 +120,11 @@ const whatCharacters = function () {
   specialCharacter = confirm("Would you like to include a special character?");
 };
 
-//function to push at least one random character of each selected character type into the final password array and set loop length depending on how many characters were pushed
-const includeSelectedCharacterTypes = function () {
+/**
+ * @description function to push at least one random character of each selected character type into the final password array and set loop length depending on how many characters were pushed
+ * @returns array with one of each of the selected character types
+ */
+const includeSelectedCharacterTypes = () => {
   if (lowerCase) {
     const arrayLength = lowerCaseArray.length;
     const randomIndex = Math.floor(Math.random() * arrayLength);
@@ -144,8 +154,11 @@ const includeSelectedCharacterTypes = function () {
   }
 };
 
-//function to concatenate arrays for selected characters
-const concatenateArrays = function () {
+/**
+ * @description function to concatenate arrays for selected characters
+ * @returns concatenated array
+ */
+const concatenateArrays = () => {
   if (lowerCase) {
     concatenatedArray = concatenatedArray.concat(lowerCaseArray);
   }
@@ -163,8 +176,11 @@ const concatenateArrays = function () {
   }
 };
 
-//function to loop through password length and push random characters from concatenated array into password array
-const fillPasswordArray = function () {
+/**
+ * @description function to loop through password length and push random characters from concatenated array into password array
+ * @returns password array
+ */
+const fillPasswordArray = () => {
   for (let i = 0; i < passwordLength; i++) {
     const arrayLength = concatenatedArray.length;
     const randomIndex = Math.floor(Math.random() * arrayLength);
